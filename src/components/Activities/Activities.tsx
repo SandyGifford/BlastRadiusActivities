@@ -10,18 +10,14 @@ interface ActivitiesProps {
 const Activities: React.FunctionComponent<ActivitiesProps> = ({}) => {
 	const [activities, setActivities] = React.useState<ActivityData[]>([]);
 	const [thinking, setThinking] = React.useState(false);
-
-	function getActivities() {
+	
+	React.useEffect(() => {
 		setThinking(true);
 		API.getActivities()
 			.then(r => {
 				setThinking(false);
 				setActivities(r);
 			});
-	}
-	
-	React.useEffect(() => {
-		getActivities();
 	}, []);
 
 	return <div className="Activities">

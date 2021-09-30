@@ -30722,16 +30722,13 @@ __webpack_require__.r(__webpack_exports__);
 const Activities = ({}) => {
     const [activities, setActivities] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
     const [thinking, setThinking] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
-    function getActivities() {
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
         setThinking(true);
         _API__WEBPACK_IMPORTED_MODULE_1__["default"].getActivities()
             .then(r => {
             setThinking(false);
             setActivities(r);
         });
-    }
-    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
-        getActivities();
     }, []);
     return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "Activities" }, thinking ?
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Thinker_Thinker__WEBPACK_IMPORTED_MODULE_3__["default"], { className: "Activities__thinker" }) :
