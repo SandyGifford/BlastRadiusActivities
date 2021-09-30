@@ -6,7 +6,6 @@ interface AppProps {
 }
 
 const App: React.FunctionComponent<AppProps> = ({}) => {
-
 	return <div className="App">
 		<Activities />
 	</div>;
